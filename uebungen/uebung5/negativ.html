@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="JavaScript" type="text/javascript">
+				
+		function process() {
+			
+			var image = document.getElementById("origImage"); // get image element from document tree
+			var width = image.width;	
+			var height = image.height;
+				
+			var canvas	= document.createElement("CANVAS");	// create new canvas element
+			canvas.width = width;							// set canvas dimensions to image dimensions
+			canvas.height= height;
+			var context = canvas.getContext("2d"); 			// get the 2d context of the canvas
+			context.drawImage(image,0,0);		 			// draw the image to the context
+			
+			var imageData = context.getImageData(0, 0, width, height); // get the image data of the context 
+			var pixels = imageData.data;					// get the pixels
+			
+			var length = width*height*4;					// precompute the length of the pixel array	
+			for(var index=0; index<length; ) {
+				pixels[index] = 255-pixels[index++];		// compute the negative
+				pixels[index] = 255-pixels[index++];
+				pixels[index] = 255-pixels[index++];
+				index++;
+			}
+			
+			context.putImageData(imageData,0,0);			// set the new pixels to the context (canvas)		
+			document.getElementById("negative").appendChild(canvas); // add canvas to the document tree
+		}
+		</script>
+    </head>
+
+    <body onload="process();">
+    	<h1 style="margin-left:10px">Image processing using the canvas element </h1>
+        <img id="origImage" src="mandrill.png" style="border:1px solid black; margin:10px; float:left;"/>
+		<div id="negative" style="border:1px solid black; padding:0; float:left; margin:10px"></div>
+    </body>
+</html>

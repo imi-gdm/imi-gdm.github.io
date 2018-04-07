@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title> </title>
+<style><!--
+.Normal
+	{font-size:10.0pt;
+	font-family:"Times New Roman";}
+.MsoBodyTextIndent
+	{font-size:11.0pt;
+	font-family:"Times New Roman";}
+.MsoBodyTextIndent2
+	{text-indent:-21.3pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+-->
+</style>
+</head>
+<body lang=DE class="Normal" bgcolor="#ffffff">
+<table border=1 cellspacing=0 cellpadding=0 width="100%" height="82">
+  <tr> 
+    <td width=36% valign=top class="Normal"> 
+      <h2>HTW - Berlin</h2>
+    </td>
+    <td width=23% valign=top class="Normal"> 
+      <h2 align="center">Grundlagen digitaler Medien</h2>
+    </td>
+    <td width=41% valign=top class="Normal"> 
+      <h2 align=right style='text-align:right'>Internationaler Studiengang<br>
+        Medieninformatik </h2>
+    </td>
+  </tr>
+  <tr> 
+    <td width=36% valign=top class="Normal"> 
+      <h2><b><span
+  style='font-size:14.0pt;'>Prof. Dr. Kai Uwe Barthel</span></b></h2>
+    </td>
+    <td width=23% valign=top class="Normal"> 
+      <h3 align="center">&nbsp;</h3>
+    </td>
+    <td width=41% valign=top class="Normal"> 
+      <h2 align="right">                 Übung  6</h2>
+    </td>
+  </tr>
+</table>
+<h3>Bildvergr&ouml;&szlig;erung in Java mit <a href="http://rsb.info.nih.gov/ij/">ImageJ</a></h3>
+<p><font size="3">1) 
+  Starten Sie dann das Programm ImageJ, &ouml;ffnen Sie das Bild <a href="component.jpg">component.jpg</a> 
+und schauen Sie, wie das Bild nach einer Vergr&ouml;&szlig;erung mit unterschiedlichen Interpolationsverfahren aussieht. </font></p>
+<p><font size="3"> 2) Als n&auml;chstes soll wieder ein PlugIn von ImageJ realisisiert 
+  werden.<br>
+  Kopieren Sie hierzu das Beispiel-PlugIn (<a href="Scale_.java">Scale_.java</a> 
+  ) in das PlugIn/Demos-Verzeichnis von ImageJ. <br>
+  Nehmen das PlugIn in Betrieb, in dem Sie es mit &quot;Compile and Run&quot; 
+(aus dem Plugins-Menu) &uuml;bersetzen und ausf&uuml;hren. Realisieren Sie jetzt eine main-Methode, so dass Sie das Plugin auch von Eclipse starten k&ouml;nnen. Orientieren Sie sich hierbei an den letzten &Uuml;bungen.</font></p>
+<p><font size="3">3) Nehmen Sie dieses PlugIn als Ausgangsbasis f&uuml;r Ihre 
+  eigene Arbeit. Legen Sie eine Kopie der Datei &quot;Scale_.java&quot; 
+  mit dem Namen &quot;Scale_S012345_.java&quot; (entsprechend Ihrer Matrikelnr.) 
+  an. Realisieren Sie ein PlugIn, mit dem Sie folgende Aufgaben realisieren k&ouml;nnen:</font></p>
+<p><font size="3">- Erzeugung eines neuen Bildes mit neuer vorgebarer Bildgr&ouml;&szlig;e.<br>
+  - </font><font size="3">Hierbei soll die Art, wie die Pixel des neuen Bildes 
+  berechnet werden sollen, nach drei Methoden ausw&auml;hlbar sein.</font></p>
+<p><font size="3">Achtung: Gehen Sie grunds&auml;tzlich so vor, dass Sie ausgehend 
+  von allen Pixelpositionen des neuen Bildes neue Werte aus dem Ausgangssbild 
+  berechnen.<br>
+  </font></p>
+<table width="97%" border="0">
+  <tr> 
+    <td width="59%"> 
+      <blockquote>
+        <p><font size="3">a) Kopie (schon fertig): Hierbei sollen die Pixel des Ausgangsbildes 
+          einfach in das neue Bild kopiert werden. Hierbei ist zu beachten, das 
+          der Rand des neuen Bildes nicht &uuml;berschrieben wird, falls das neue 
+          Bild kleiner als das Ausgangsbild ist. Ist das neue Bild gr&ouml;&szlig;er, 
+          so sollen die gr&ouml;&szlig;eren Bereiche einfach freigelassen (schwarz) 
+          werden.</font></p>
+        <p><font size="3">b) Pixelwiederholung: Das Ausgangsbild soll auf die 
+          neue Gr&ouml;&szlig;e gebracht werden. Als Interpolationsmethode soll 
+          die einfache Pixelwiederholung verwendet werden.</font></p>
+        <p><font size="3">c) Bilineare Interploation: Wie 2, allerdings ist hierbei 
+          die bilinare Interpolationstechnik zu verwenden. (Sollte sch&ouml;ner 
+          aussehen, evtl. Kontrolle &uuml;ber Photoshop oder ImageJ: Skalierung 
+          mit Interpolation)</font></p>
+        <p>d) Wer noch Zeit hat, kann versuchen zus&auml;tzlich auch noch eine Drehung des Bildes um einen vorgebbaren Winkel zu realisieren. (Dieser Teil ist freiwillig.)</p>
+      </blockquote>
+    </td>
+    <td width="41%">
+      <div align="center"><img src="menu.gif" width="246" height="182"></div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

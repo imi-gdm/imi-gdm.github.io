@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> </title>
+<style>
+<!--
+.Normal
+	{font-size:10.0pt;
+	font-family:"Times New Roman";}
+.MsoBodyTextIndent
+	{font-size:11.0pt;
+	font-family:"Times New Roman";}
+.MsoBodyTextIndent2
+	{text-indent:-21.3pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+.Stil3 {color: #000000}
+.Stil12 {
+	font-size: 16px
+}
+-->
+</style>
+</head>
+<body lang=DE class="Normal" bgcolor="#ffffff">
+<table border=1 cellspacing=0 cellpadding=0 width="100%" height="82">
+  <tr> 
+    <td width=36% valign=top class="Normal"> 
+      <h2>HTW - Berlin</h2>    </td>
+    <td width=23% valign=top class="Normal"> 
+      <h3 align="center">Grundlagen digitaler Medien</h3>    </td>
+    <td width=41% valign=top class="Normal"> 
+      <h2 align=right style='text-align:right'>Internationaler Studiengang<br>
+        Medieninformatik </h2>    </td>
+  </tr>
+  <tr> 
+    <td width=36% valign=top class="Normal"> 
+      <h2><b><span
+  style='font-size:14.0pt;'>Prof. Dr. Kai Barthel</span></b></h2>    </td>
+    <td width=23% valign=top class="Normal"> 
+      <h3 align="center">Bachelor</h3>    </td>
+    <td width=41% valign=top class="Normal"> 
+      <h2 align="right">                 Übung  2 </h2>    </td>
+  </tr>
+</table>
+<h3 class="Stil12">Farbtransformation und Modifikation in Java mit ImageJ</h3>
+<p class="Stil12">1)  Verwenden Sie das 
+  Beispiel-PlugIn <a href="GRDM_U2.java">GLDM_U2.java</a>, das Sie in das ImageJ-Plugins-Verzeichnis 
+  (bzw. Plugins/<em>IhrProjektOrdner</em>) von ImageJ kopieren sollten. Nehmen Sie das PlugIn in Betrieb, in dem Sie es 
+  aus Eclipse heraus starten. Verwenden Sie  das <a href="orchid.jpg">Orchid</a>-Bild f&uuml;r Ihre &Uuml;bung. <br>
+</p>
+<p class="Stil12">2) Nehmen Sie dieses PlugIn als Ausgangsbasis f&uuml;r Ihre 
+  eigene Arbeit. Legen Sie eine Kopie der Java-Datei mit dem Namen &quot;GRDM_U2_S0123435.java&quot; 
+  entsprechend ihrer Matrikelnummer an. Korrigieren Sie den &Uuml;berlauf, der bei der Helligkeits&auml;nderung auftritt.</p>
+<p class="Stil12">Als n&auml;chster Schritt soll eine Farbtransformation von RGB nach YCbCr 
+  programmiert werden. </p>
+<blockquote class="Stil12">
+  <p>Die Transformationsvorschrift lautet: </p>
+  <table width="586" border="1">
+    <tr>
+      <td width="173">Luminanz</td>
+      <td width="397"> Y = 0.299 * R + 0.587 * G + 0.114 * B</td>
+    </tr>
+    <tr>
+      <td>1. Chrominanzkomponente</td>
+      <td>Cb = -0.168736 * R - 0.331264 * G + 0.5 * B</td>
+    </tr>
+    <tr>
+      <td>2. Chrominanzkomponente</td>
+      <td>Cr = 0.5 * R - 0.418688 * G - 0.081312 * B</td>
+    </tr>
+  </table>
+  <p>Die inverse Transformation lautet: </p>
+  <table width="583" border="1">
+    <tr>
+      <td width="173">Rot</td>
+      <td width="394">R = Y + 1.402 * Cr </td>
+    </tr>
+    <tr>
+      <td>Gr&uuml;n</td>
+      <td>G = Y - 0.3441*Cb - 0.7141*Cr</td>
+    </tr>
+    <tr>
+      <td>Blau</td>
+      <td>B = Y + 1.772*Cb</td>
+    </tr>
+  </table>
+</blockquote>
+<p class="Stil12"> Rufen Sie die Farbtransformation in der Methode changePixelValues auf. <br>
+&Uuml;berpr&uuml;fen Sie, ob das Ergebnis nach erfolgter 
+  Hin- und R&uuml;cktransformation wieder dem Original entspricht.</p>
+<p class="Stil12">3) Als n&auml;chstes soll eine Farbver&auml;nderung programmiert 
+  werden, die diverse Modifikationen des YCbCr-Vektors erlaubt. <br>
+Hierbei sollen folgende Modifikationen m&ouml;glich sein:</p>
+<table width="200" border="1">
+  <tr>
+    <td class="Stil12"><ul>
+      <li>
+        <div align="left">
+          <div align="left" class="Stil3">
+            <p>&Auml;nderung der Helligkeit (-128 bis 128) </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div align="left">
+          <div align="left" class="Stil3">
+            <p>&Auml;nderung des Kontrastes (0 bis 10.0)<br>
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div align="left">
+          <p class="Stil3">&Auml;nderung der Farbs&auml;ttigung (0 bis 5.0)</p>
+        </div>
+      </li>
+      <li>
+        <div align="left">
+          <p><span class="Stil3">&Auml;nderung der Farbe (Hue) durch 
+            Drehung der Farb-Ebene bzw. des CbCr-Vektors um einen 
+            vorgebbaren Winkel (0 bis 360&deg;)<br>
+            Zur Erinnerung: <br>
+            Eine Drehung eines Vektors (x,y) um den Winkel phi  wird wie folgt berechnet: </span><br>
+              <img src="drehung.gif" alt="" width="250" height="70"></p>
+        </div>
+      </li>
+    </ul>    </td>
+    <td class="Stil12"><img src="screen.jpg" ></td>
+  </tr>
+</table>
+<p class="Stil12">Alle Modifikationen sollen &uuml;ber die Ver&auml;nderung der YCbCr-Vektoren aller Bildpunkte realisiert werden. Nach erfolgter Modifikation 
+sollen die YCbCr-Vektoren wieder zur&uuml;ck nach RGB transformiert werden. Das ver&auml;nderte Bild wird automatisch angezeigt.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class=MsoBodyTextIndent2 style='
+'>&nbsp;</p>
+</body>
+</html>

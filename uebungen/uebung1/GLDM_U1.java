@@ -14,7 +14,7 @@ public class GLDM_U1 implements PlugIn {
 		"Gelbes Bild",
 		"Schwarz/Weiss Verlauf",
 		"Horiz. Schwarz/Rot vert. Schwarz/Blau Verlauf",
-		"Italienische Fahne",
+		"Französische Fahne",
 		"Bahamische Fahne",
 		"Japanische Fahne",
 		"Japanische Fahne mit weichen Kanten"
@@ -48,21 +48,7 @@ public class GLDM_U1 implements PlugIn {
 		// Hier bitte Ihre Aenderungen / Erweiterungen
 		
 		if ( choice.equals("Schwarzes Bild") ) {
-			
-			// Schleife ueber die y-Werte
-			for (int y=0; y<height; y++) {
-				// Schleife ueber die x-Werte
-				for (int x=0; x<width; x++) {
-					int pos = y*width + x; // Arrayposition bestimmen
-					
-					int r = 0;
-					int g = 0;
-					int b = 0;
-					
-					// Werte zurueckschreiben
-					pixels[pos] = 0xFF000000 | (r << 16) | (g << 8) |  b;
-				}
-			}
+			generateBlackImage(width, height, pixels);
 		}
 		
 		////////////////////////////////////////////////////////////////////
@@ -70,6 +56,23 @@ public class GLDM_U1 implements PlugIn {
 		// neues Bild anzeigen
 		imagePlus.show();
 		imagePlus.updateAndDraw();
+	}
+
+	private void generateBlackImage(int width, int height, int[] pixels) {
+		// Schleife ueber die y-Werte
+		for (int y=0; y<height; y++) {
+			// Schleife ueber die x-Werte
+			for (int x=0; x<width; x++) {
+				int pos = y*width + x; // Arrayposition bestimmen
+				
+				int r = 0;
+				int g = 0;
+				int b = 0;
+				
+				// Werte zurueckschreiben
+				pixels[pos] = 0xFF000000 | (r << 16) | (g << 8) |  b;
+			}
+		}
 	}
 	
 	

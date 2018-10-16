@@ -52,7 +52,7 @@
 <p class="Stil12">2) Nehmen Sie dieses PlugIn als Ausgangsbasis f&uuml;r Ihre 
   eigene Arbeit. Legen Sie eine Kopie der Java-Datei mit dem Namen &quot;GRDM_U2_S0123435.java&quot; 
   entsprechend ihrer Matrikelnummer an. Korrigieren Sie den &Uuml;berlauf, der bei der Helligkeits&auml;nderung auftritt.</p>
-<p class="Stil12">Als n&auml;chster Schritt soll eine Farbtransformation von RGB nach YCbCr 
+<p class="Stil12">Als n&auml;chster Schritt soll eine Farbtransformation von RGB nach YUV 
   programmiert werden. </p>
 <blockquote class="Stil12">
   <p>Die Transformationsvorschrift lautet: </p>
@@ -62,27 +62,27 @@
       <td width="397"> Y = 0.299 * R + 0.587 * G + 0.114 * B</td>
     </tr>
     <tr>
-      <td>1. Chrominanzkomponente</td>
-      <td>Cb = -0.168736 * R - 0.331264 * G + 0.5 * B</td>
+      <td>U Kanal</td>
+      <td>U = (B - Y) * 0.493</td>
     </tr>
     <tr>
-      <td>2. Chrominanzkomponente</td>
-      <td>Cr = 0.5 * R - 0.418688 * G - 0.081312 * B</td>
+      <td>V Kanal</td>
+      <td>V = (R - Y) * 0.877</td>
     </tr>
   </table>
   <p>Die inverse Transformation lautet: </p>
   <table width="583" border="1">
     <tr>
       <td width="173">Rot</td>
-      <td width="394">R = Y + 1.402 * Cr </td>
+      <td width="394">Y + V/0.877</td>
     </tr>
     <tr>
       <td>Gr&uuml;n</td>
-      <td>G = Y - 0.3441*Cb - 0.7141*Cr</td>
+      <td>G = 1/0.587 * Y - 0.299/0.587*R - 0.114/0.587 * B</td>
     </tr>
     <tr>
       <td>Blau</td>
-      <td>B = Y + 1.772*Cb</td>
+      <td>B = Y + U/0.493</td>
     </tr>
   </table>
 </blockquote>
@@ -90,7 +90,7 @@
 &Uuml;berpr&uuml;fen Sie, ob das Ergebnis nach erfolgter 
   Hin- und R&uuml;cktransformation wieder dem Original entspricht.</p>
 <p class="Stil12">3) Als n&auml;chstes soll eine Farbver&auml;nderung programmiert 
-  werden, die diverse Modifikationen des YCbCr-Vektors erlaubt. <br>
+  werden, die diverse Modifikationen des YUV-Vektors erlaubt. <br>
 Hierbei sollen folgende Modifikationen m&ouml;glich sein:</p>
 <table width="500" border="1">
   <tr>
@@ -130,8 +130,8 @@ Hierbei sollen folgende Modifikationen m&ouml;glich sein:</p>
     <td class="Stil12"><img src="screen.jpg" ></td>
   </tr>
 </table>
-<p class="Stil12">Alle Modifikationen sollen &uuml;ber die Ver&auml;nderung der YCbCr-Vektoren aller Bildpunkte realisiert werden. Nach erfolgter Modifikation 
-sollen die YCbCr-Vektoren wieder zur&uuml;ck nach RGB transformiert werden. Das ver&auml;nderte Bild wird automatisch angezeigt.</p>
+<p class="Stil12">Alle Modifikationen sollen &uuml;ber die Ver&auml;nderung der YUV-Vektoren aller Bildpunkte realisiert werden. Nach erfolgter Modifikation 
+sollen die YUV-Vektoren wieder zur&uuml;ck nach RGB transformiert werden. Das ver&auml;nderte Bild wird automatisch angezeigt.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
